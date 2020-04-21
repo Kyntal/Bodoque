@@ -84,11 +84,12 @@ client.on("message", (message) => {
   if(message.content.startsWith(prefix + "userinfo")){
       let embed = new Discord.MessageEmbed()
           .setAuthor(message.author.username)
+          .addField("Imagen :", message.author.avatar)
           .setDescription("Aquí está la información de tu usuario =)")
           .setColor("#0381ff")
-          .addFields("Usuario Completo", `${message.author.username}#${message.author.discriminator}`)
-          .addFields("ID", message.author.id)
-          .addFields("Creado el", message.author.createdAt);
+          .addField("Usuario Completo", `${message.author.username}#${message.author.discriminator}`)
+          .addField("ID", message.author.id)
+          .addField("Creado el", message.author.createdAt)
 
       message.channel.send(embed);
   }
@@ -153,7 +154,7 @@ client.on("message", (message) => {
       .addField(":information_source: Información de tu usuario :", "`userinfo`")
       .addField(":tada: Demás comandos :", "`twitch` `prueba`")
       .addField("Puedes hablar con el bot... Si te sientes sólo :v ", "`F`, `no`, `hola`\ Aquí no se usa el prefijo")
-
+      .setImage("https://lh3.googleusercontent.com/proxy/0IxjZhSXEu5sJ5WdyiD1G-h0F1Ej3DdEwtThik47Zaq6u6oTgXv64ozG-uGMdGNzk096Mzr5altHu4BAYj9AIEW67Ijx6Zw7TagdVFpDg_5xh9eYnYX14lTGU1kYGANnak_NlA")
     message.channel.send(embed4);
   }
 //Necesita tener una clave para usar la API de YouTube Data API v3
