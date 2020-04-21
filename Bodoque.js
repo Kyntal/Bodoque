@@ -43,12 +43,12 @@ client.on('guildMemberAdd', member=>{
 //MENSAJE DE DESPEDIDA
 client.on('guildMemberRemove', member=>{
     const userexit = member.user;
-    const frasexit = "Se fue el maricon :c "
+    const frasexit = "Se fue el maricon :c";
     
     let channel = member.guild.channels.cache.get("701636332203540490");
 
     const embed2 = new Discord.MessageEmbed()
-      .setTitle(`➡ ¡${userexit.tag} ha abandonado servidor!`)
+      .setTitle(`➡ ¡${userexit.tag} ha abandonado el servidor!`)
       .setTimestamp()
       .setDescription(frasexit)
       .setColor("RED")
@@ -65,15 +65,7 @@ client.on("message", (message) => {
    if (message.content.startsWith(prefix + "invite")) {
     client
   //permiso de roles para usar el comando
-      .generateInvite([
-        "ADMINISTRATOR",
-        "MANAGE_CHANNELS",
-        "MANAGE_ROLES",
-        "MANAGE_MESSAGES",
-        "SEND_MESSAGES",
-        "CONNECT",
-        "BAN_MEMBERS"
-      ])
+      .generateInvite("ADMINISTRATOR")
       .then(link => {
        message.channel.send("Link de invitación: " + link);
       });
