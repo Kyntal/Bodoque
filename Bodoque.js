@@ -2,7 +2,9 @@ const Discord = require("discord.js");
 const  client = new Discord.Client();
 const config = require("./config.json");
 const ytdl = require('ytdl-core');
+const token = require("./Clases/token.js");
 
+client.login(token)
 //DISTINTOS ESTADOS PARA EL BOT
 const lista_actividad = [
   "Nota Verde", 
