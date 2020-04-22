@@ -23,13 +23,13 @@ client.on("ready", () => {
     }, 300000);//TIEMPO MEDIDO EN MILISEGUNDOS '300000' SON 5 MINUTOS
 });
 
-var prefix = config.prefix;
+const prefix = config.prefix;
 
 //MENSAJE DE BIENVENIDA
 client.on('guildMemberAdd', member=>{
     const user = member.user;
     const frase = "Disfruta tu estadía por acá!";
-    let channel = member.guild.channels.cache.get("701636332203540490");//NOMBRE DEL CANAL DONDE SE PUBLICARÁ LA BIENVENIDA
+    const channel = member.guild.channels.cache.get("701636332203540490");//NOMBRE DEL CANAL DONDE SE PUBLICARÁ LA BIENVENIDA
      //EXCEPTION POR SI NO EXISTE EL CANAL if(!channel) return;
 
         const embed = new Discord.MessageEmbed()
@@ -45,7 +45,7 @@ client.on('guildMemberRemove', member=>{
     const userexit = member.user;
     const frasexit = "Se fue el maricon :c";
     
-    let channel = member.guild.channels.cache.get("701636332203540490");
+    const channel = member.guild.channels.cache.get("701636332203540490");
 
     const embed2 = new Discord.MessageEmbed()
       .setTitle(`➡ ¡${userexit.tag} ha abandonado el servidor!`)
@@ -76,7 +76,7 @@ client.on("message", (message) => {
   if(message.content.startsWith(prefix + "userinfo")){
       let embed = new Discord.MessageEmbed()
           .setAuthor(message.author.username)
-          .addField("Imagen :", message.author.avatar)
+          .addField("Imagen :", message.author.displayAvatarURL())
           .setDescription("Aquí está la información de tu usuario =)")
           .setColor("#0381ff")
           .addField("Usuario Completo", `${message.author.username}#${message.author.discriminator}`)
@@ -112,7 +112,7 @@ client.on("message", (message) => {
       color: 15158332,
       author: {
           name: client.user.username,
-          icon_url: client.user.avatarURL
+          icon_url: client.user.displayAvatarURL({size: 128})
       },
       title: "Mi Canal de Twitch ♥",
       url: "http://www.twitch.tv/kyntal1",
@@ -124,12 +124,12 @@ client.on("message", (message) => {
         },
         {
           name: "Salen sus Rocketo?",
-          value: "**__Jugueeemo po ctm__** "
+          value: "**__Jugueeemo po ctm__**"
         }
       ],
       timestamp: new Date(),
       footer: {
-        icon_url: client.user.avatarURL,
+        icon_url: client.user.displayAvatarURL({size: 64}),
         text: "http://www.twitch.tv/kyntal1"
       }
     }
@@ -153,4 +153,3 @@ client.on("message", (message) => {
 //video tutorial: https://www.youtube.com/watch?v=VxQPG991YUs
 
 });
-client.login(config.token);
