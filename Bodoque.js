@@ -77,12 +77,12 @@ client.on("message", (message) => {
       let embed = new Discord.MessageEmbed()
           .setAuthor(message.author.username)
           .addField("Imagen :", message.author.displayAvatarURL())
+          .setThumbnail(message.author.displayAvatarURL({ size: 512 }))
           .setDescription("Aquí está la información de tu usuario =)")
           .setColor("#0381ff")
           .addField("Usuario Completo", `${message.author.username}#${message.author.discriminator}`)
           .addField("ID", message.author.id)
           .addField("Creado el", message.author.createdAt)
-
       message.channel.send(embed);
   }
 
@@ -151,5 +151,4 @@ client.on("message", (message) => {
   }
 //Necesita tener una clave para usar la API de YouTube Data API v3
 //video tutorial: https://www.youtube.com/watch?v=VxQPG991YUs
-
 });
