@@ -3,6 +3,8 @@ const Discord = require("discord.js");
 const fs = require('fs');
 const { prefix, IdOwner } = require("./config.json");
 const token = require("./Clases/token.js");
+const moment = require("moment");
+require('moment-duration-format');
 
 const  client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -32,6 +34,8 @@ client.on("ready", () => {
     }, 300000);//TIEMPO MEDIDO EN MILISEGUNDOS '300000' SON 5 MINUTOS
 });
 
+client.once('ready', () => {});// ¿?¿? ShompiHelp
+
 //const prefix = config.prefix;
 
 //MENSAJE DE BIENVENIDA
@@ -45,7 +49,7 @@ client.on('guildMemberAdd', member=>{
           .setTitle(`➡ ¡${user.tag} se ha unido al servidor!`)
           .setTimestamp()
           .setDescription(frase)
-          .setColor("RED")
+          .setColor("GREEN")
           .setThumbnail(user.displayAvatarURL({ size: 512 }))
         channel.send(embed);
 });
@@ -66,6 +70,13 @@ client.on('guildMemberRemove', member=>{
 });
 
 client.on('message', message => {
+
+  if (message.channel.id != 448289356961021952) {
+    if (message.content.startsWith("-play")) {
+      message.channel.send(`Si quieres poner música usa el canal de texto: <#${448289356961021952}>`)
+      message.delete()
+    }
+  }
   //COMIENZO DE LOS TYPEOS PARA EL AUTISMO
   if (message.content.startsWith("f")) {
     message.channel.send("Suelta la tecla 'F' Perro Conchetumare");
