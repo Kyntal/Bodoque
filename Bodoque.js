@@ -3,10 +3,15 @@ const Discord = require("discord.js");
 const fs = require('fs');
 const { prefix, IdOwner } = require("./config.json");
 const token = require("./Clases/token.js");
+const moment = require("moment");//ShompiHELP
+require('moment-duration-format');//ShompiHELP
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 
+
+
+client.once('ready', () => {});////ShompiHELP
 
 const commandFiles = fs.readdirSync('./Comandos/Commands/').filter(file => file.endsWith('.js'));
 
