@@ -9,10 +9,6 @@ require('moment-duration-format');//ShompiHELP
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 
-
-
-client.once('ready', () => {});////ShompiHELP
-
 const commandFiles = fs.readdirSync('./Comandos/Commands/').filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
@@ -28,7 +24,7 @@ const lista_actividad = [
     "¿A quién Baneo?",
 ];
 
-client.on("ready", () => {
+client.once("ready", () => {
     console.log("Estoy listo! Bodoque está en Vivo =)");
     //LINEAS PARA CAMBIAR ESTADO DEL BOT
     setInterval(() => {
