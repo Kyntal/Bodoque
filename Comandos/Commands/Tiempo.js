@@ -10,6 +10,11 @@ module.exports = {
         weather.find({ search: args.join(" "), degreetype: "C" }, function (err, result) { //Fixear el tipo de grado, sólo sale en Fahrenheit.
             if (err) message.channel.send(err);
 
+            if (result.length === 0){
+                message.channel.send('**📍Por favor, ingresa una ciudad/localidad valida.**')
+                return;
+            }
+
             const current = result[0].current;
             const location = result[0].location;
             const forecast = result[0].forecast;

@@ -37,6 +37,14 @@ client.once("ready", () => {
 
 //MENSAJE DE BIENVENIDA
 client.on('guildMemberAdd', member => {
+  
+  console.log('Usuario ' + member.user.username + 'ha entrado al servidor!')//CONSOLE LOG DE CUANDO UN USUARIO ENTRA AL SERVIDOR
+
+  
+  const role = member.guild.roles.cache.get("701101365576859689");//FUNCION QUE BUSCA EL ROL
+  member.roles.add(role)//LUEGO SE AÑADE EL ROL
+  
+
   const user = member.user;
   const frase = "Disfruta tu estadía por acá!";
   const channel = member.guild.channels.cache.get("701636332203540490");//ID DEL CANAL DONDE SE PUBLICARÁ LA BIENVENIDA
