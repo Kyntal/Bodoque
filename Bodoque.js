@@ -1,4 +1,4 @@
-//ACTUALIZADO EL '25/04/2020' A LAS 16:41 
+//ACTUALIZADO EL '04/05/2020' A LAS 15:21 
 const Discord = require("discord.js");
 const fs = require('fs');
 const { prefix, IdOwner } = require("./config.json");
@@ -46,7 +46,7 @@ client.on('guildMemberAdd', member => {
     .setTitle(`➡ ¡${user.tag} se ha unido al servidor!`)
     .setTimestamp()
     .setDescription(frase)
-    .setColor("RED")
+    .setColor("GREEN")
     .setThumbnail(user.displayAvatarURL({ size: 512 }))
   channel.send(embed);
 });
