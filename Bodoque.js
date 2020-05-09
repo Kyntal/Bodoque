@@ -5,6 +5,7 @@ const { prefix, IdOwner } = require("./config.json");
 const token = require("./Clases/token.js");
 const moment = require("moment");//ShompiHELP
 require('moment-duration-format');//ShompiHELP
+const ytdl = require('ytdl-core');
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
