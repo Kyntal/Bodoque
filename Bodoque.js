@@ -19,7 +19,6 @@ for (const file of commandFiles) {
 //DISTINTOS ESTADOS PARA EL BOT
 const lista_actividad = [
   "Nota Verde",
-  "Nesi Chupala",
   "Tulio renuncia!",
   "DOU",
   "¿A quién Baneo?",
