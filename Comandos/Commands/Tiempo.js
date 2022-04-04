@@ -8,9 +8,9 @@ module.exports = {
     execute(message, args) {
 
         weather.find({ search: args.join(" "), degreetype: "C" }, function (err, result) { //Fixear el tipo de grado, sólo sale en Fahrenheit.
-            if (err) message.channel.send(err);
+            if (err) message.channel.send(`Error de tipo ${err} Prueba agregando una ciudad/comuna`);
 
-            if (result.length === 0){
+            if (result.length == 0){
                 message.channel.send('**📍Por favor, ingresa una ciudad/localidad valida.**')
                 return;
             }

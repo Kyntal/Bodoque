@@ -1,1 +1,1 @@
-worker: node Bodoque.js
+worker: npm start

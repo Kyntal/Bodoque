@@ -1,11 +1,9 @@
 //ACTUALIZADO EL '04/05/2020' A LAS 15:21 
 const Discord = require("discord.js");
 const fs = require('fs');
-const { prefix, IdOwner } = require("./config.json");
-const token = require("./Clases/token.js");
+const { prefix, IdOwner, token } = require("./config.json");
 const moment = require("moment");//ShompiHELP
 require('moment-duration-format');//ShompiHELP
-const ytdl = require('ytdl-core');
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -119,4 +117,4 @@ client.on('message', message => {
 
 });
 
-client.login(token)
+client.login(token);
